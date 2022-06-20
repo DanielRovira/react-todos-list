@@ -5,7 +5,7 @@ import Button from './Button';
 import './css/AddTask.css';
 
 const AddTask = ({ handleTaskAddition }) => {
-    const [inputData, setInputData] = useState("");
+    const [inputData, setInputData] = useState('');
 
     const handleInputChange = (e) => {
         setInputData(e.target.value);
@@ -13,6 +13,7 @@ const AddTask = ({ handleTaskAddition }) => {
 
     const handleAddTaskClick = () => {
         handleTaskAddition(inputData);
+        setInputData('');
     };
 
     return (
@@ -22,7 +23,7 @@ const AddTask = ({ handleTaskAddition }) => {
                 value={inputData}
                 className='add-task-input' 
                 type="text" 
-            />;
+            />
             <div className="add-task-button-container">
               <Button onClick={handleAddTaskClick}>Adicionar</Button>
              </div>
