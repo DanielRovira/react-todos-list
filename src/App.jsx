@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {v4 as uuidv4} from 'uuid'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
-import {axios} from 'axios'
 
 import Header from './components/Header';
 import Tasks from './components/Tasks';
@@ -16,7 +15,6 @@ const App = () => {
                 id: '1',
                 title: 'Estudar programação',
                 completed: false,
-
             },
             {
                 id: '2',
@@ -58,14 +56,13 @@ const App = () => {
             ];
 
             setTasks(newTasks);
-
         };
 
         const handleTaskDeletion = (taskId) => {
             const newTasks = tasks.filter(task => task.id != taskId)
 
             setTasks(newTasks)
-        }
+        };
 
         return (
             <Router>
