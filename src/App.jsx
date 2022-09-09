@@ -25,17 +25,17 @@ const App = () => {
             },
         ]);
 
-        // useEffect(() => {
-        //     const fetchTasks = async () => {
-        //          const { data } = await axios.get(
-        //              "https://jsonplaceholder.cypress.io/todos?_limit=10"
-        //          );
-        //          console.log(data)
-        //          setTasks(data);
-        //     };
+        useEffect(() => {
+            const fetchTasks = async () => {
+                 const response  = await fetch(
+                     "https://jsonplaceholder.typicode.com/todos?_limit=4"
+                 );
+                 const responseJson = await response.json();
+                 setTasks(responseJson);
+            };
 
-        //     fetchTasks();
-        // }, []);
+            fetchTasks();
+        }, []);
 
         const handleTaskClick = (taskId) => {
             const newTask = tasks.map(task => {
