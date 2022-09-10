@@ -11,6 +11,7 @@ const TaskDetails = () => {
     const handleBackButtonClick = () => {
         history(-1);
     }
+    
     return (
         <>
             <div className='back-button-container'>

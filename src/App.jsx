@@ -66,16 +66,15 @@ const App = () => {
 
         const Main = () => {
             return (
-            <>
-                <AddTask handleTaskAddition={handleTaskAddition} />
-                <Tasks 
-                    tasks={tasks} 
-                    handleTaskClick={handleTaskClick} 
-                    handleTaskDeletion={handleTaskDeletion}
-                /> 
-            </>
-        )
-
+                <>
+                    <AddTask handleTaskAddition={handleTaskAddition} />
+                    <Tasks 
+                        tasks={tasks} 
+                        handleTaskClick={handleTaskClick} 
+                        handleTaskDeletion={handleTaskDeletion}
+                    /> 
+                </>
+            )
         }
 
         return (
