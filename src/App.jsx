@@ -9,6 +9,8 @@ import TaskDetails from './components/TaskDetails';
 
 import './components/css/App.css'
 
+
+
 const App = () => {
         const [tasks, setTasks] = useState([
             {
@@ -64,6 +66,16 @@ const App = () => {
             setTasks(newTasks)
         };
 
+        const handleDescAddition = (taskDesc, taskTitle) => {
+            const newTask = tasks.map(task => {
+                if (task.title === taskTitle) return { ...task, description: taskDesc };
+
+                return task;
+            })
+        setTasks(newTask)
+        console.log(tasks)
+        };
+
         const Main = () => {
             return (
                 <>
@@ -83,7 +95,7 @@ const App = () => {
                     <Header/>
                     <Routes>
                         <Route path="/" element={<Main/>} />
-                        <Route path="/:taskTitle" element={<TaskDetails/>} />
+                        <Route path="/:taskTitle" element={<TaskDetails handleDescAddition={handleDescAddition}/>} />
                     </Routes>
                 </div>
             </Router>    
