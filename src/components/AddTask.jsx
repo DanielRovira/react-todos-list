@@ -9,6 +9,7 @@ const AddTask = ({ handleTaskAddition }) => {
 
     const handleInputChange = (e) => {
         setInputData(e.target.value);
+        // console.log(e.target.value)  // Mostra o valor que foi digitado
     };
 
     const handleAddTaskClick = () => {
@@ -20,7 +21,7 @@ const AddTask = ({ handleTaskAddition }) => {
         <div className='add-task-container'>
             <input 
                 onChange={handleInputChange} 
-                value={inputData}
+                value={inputData}  //Precisa disso?
                 className='add-task-input' 
                 type="text" 
             />

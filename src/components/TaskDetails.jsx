@@ -18,9 +18,9 @@ const TaskDetails = () => {
             </div>
             <div className="task-details-container">
                 <h2>{params.taskTitle}</h2>
-                <p>
-                    <input type="text" />
-                </p>
+            </div>
+            <div>
+                <textarea type="text" placeholder="Detalhes.." className='task-input-detail' />
             </div>
         </>
     );

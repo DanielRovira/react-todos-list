@@ -9,11 +9,25 @@
 }
 
 .task-details-container h2 {
-    margin-bottom: 5px;
-    color: chartreuse;
+    font-size: 1.2rem;
+    color: #eee;
 }
 
 .back-button-container {
     width: 30%;
     margin-top: 10px;
+}
+
+.task-input-detail {
+    height: 100px;
+    width: 100%;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: none;
+    flex: 2;
+    background-color: #444;
+    color: #eee;
+    font-size: 1rem;
+    box-sizing: border-box;
+    resize: none;
 }
