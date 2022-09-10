@@ -5,7 +5,7 @@ import Button from './Button';
 
 import './css/TaskDetails.css'
 
-const TaskDetails = ({ handleDescAddition }) => {
+const TaskDetails = ({ handleDescAddition, descript }) => {
     const params = useParams();
     const history = useNavigate();
     const [inputDesc, setInputDesc] = useState('');
@@ -16,7 +16,6 @@ const TaskDetails = ({ handleDescAddition }) => {
 
     const handleInputChange = (e) => {
         setInputDesc(e.target.value);
-        console.log(inputDesc);
         handleDescAddition(inputDesc, params.taskTitle);
     };
 
@@ -32,7 +31,7 @@ const TaskDetails = ({ handleDescAddition }) => {
                 <textarea
                     type="text"
                     placeholder="Detalhes.."
-                    value=""
+                    value={descript}
                     className='task-input-detail'
                     onChange={handleInputChange}
                 />

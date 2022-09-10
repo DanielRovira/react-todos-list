@@ -73,8 +73,12 @@ const App = () => {
                 return task;
             })
         setTasks(newTask)
-        console.log(tasks)
         };
+
+        const [descript, setDescription] = useState();
+        const handleDescription = (desc) => {
+            return setDescription(desc)
+        }
 
         const Main = () => {
             return (
@@ -84,6 +88,7 @@ const App = () => {
                         tasks={tasks} 
                         handleTaskClick={handleTaskClick} 
                         handleTaskDeletion={handleTaskDeletion}
+                        handleDescription={handleDescription}
                     /> 
                 </>
             )
@@ -95,7 +100,7 @@ const App = () => {
                     <Header/>
                     <Routes>
                         <Route path="/" element={<Main/>} />
-                        <Route path="/:taskTitle" element={<TaskDetails handleDescAddition={handleDescAddition}/>} />
+                        <Route path="/:taskTitle" element={<TaskDetails handleDescAddition={handleDescAddition} descript={descript}/>} />
                     </Routes>
                 </div>
             </Router>    

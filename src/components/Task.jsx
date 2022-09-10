@@ -4,11 +4,11 @@ import { useNavigate } from 'react-router-dom'
 
 import "./css/Task.css"
 
-const Task = ({ task, handleTaskClick, handleTaskDeletion }) => {
+const Task = ({ task, handleTaskClick, handleTaskDeletion, handleDescription }) => {
     const history = useNavigate();
 
     const handleTaskDetailsClick = () => {
-        
+        handleDescription(task.description);
         history(`/${task.title}`)
     }
 
