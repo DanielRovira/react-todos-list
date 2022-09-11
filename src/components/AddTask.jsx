@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
-import Button from './Button';
+// import Button from './Button';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 import './css/AddTask.css';
 
@@ -19,17 +21,19 @@ const AddTask = ({ handleTaskAddition }) => {
 
     return (
         <div className='add-task-container'>
-            <input 
+            <TextField 
                 autoFocus 
-                placeholder="Adicionar tarefa.." 
+                // placeholder="Adicionar tarefa.." 
                 onChange={handleInputChange} 
                 value={inputData} 
                 className='add-task-input' 
+                size="small"
+                variant="outlined" id="outlined-basic" label="Adicionar tarefa.." 
                 type="text" 
                 onKeyDown={event => { if (event.key === "Enter") {handleTaskAddition(inputData)}}}
             />
             <div className="add-task-button-container">
-                <Button onClick={handleAddTaskClick}>Adicionar</Button>
+                <Button variant="contained" className='add-button' onClick={handleAddTaskClick}>Adicionar</Button>
              </div>
         </div>
     );

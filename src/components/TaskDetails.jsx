@@ -1,7 +1,8 @@
 import React from 'react';
 import { useNavigate, useParams } from "react-router-dom"
 import { useEffect } from 'react';
-import Button from './Button';
+// import Button from './Button';
+import Button from '@mui/material/Button';
 
 import './css/TaskDetails.css'
 
@@ -26,7 +27,7 @@ const TaskDetails = ({ handleDescAddition }) => {
     return (
         <>
             <div className='back-button-container'>
-                <Button onClick={handleBackButtonClick}>Voltar</Button>
+                <Button variant='contained' className='back-button' onClick={handleBackButtonClick}>Voltar</Button>
             </div>
             <div className="task-details-container">
                 <h2>{params.taskTitle}</h2>
