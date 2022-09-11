@@ -6,23 +6,14 @@ import Header from './components/Header';
 import Tasks from './components/Tasks';
 import AddTask from './components/AddTask';
 import TaskDetails from './components/TaskDetails';
+import data from './data.json'
 
 import './components/css/App.css'
 
 const App = () => {
-        const [tasks, setTasks] = useState([
-            {
-                id: '1',
-                title: 'Estudar programação',
-                completed: false,
-            },
-            {
-                id: '2',
-                title: 'Ler Livros',
-                completed: true,
-            },
-        ]);
+        const [tasks, setTasks] = useState(data);
 
+        //Import from API
         // useEffect(() => {
         //     const fetchTasks = async () => {
         //          const response  = await fetch(
@@ -33,6 +24,7 @@ const App = () => {
         //     };
 
         //     fetchTasks();
+        //     console.log(data[0].title)
         // }, []);
 
         const handleTaskClick = (taskId) => {

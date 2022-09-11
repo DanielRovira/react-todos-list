@@ -9,7 +9,6 @@ const AddTask = ({ handleTaskAddition }) => {
 
     const handleInputChange = (e) => {
         setInputData(e.target.value);
-        // console.log(e.target.value)  // Mostra o valor digitado
     };
 
     const handleAddTaskClick = () => {
