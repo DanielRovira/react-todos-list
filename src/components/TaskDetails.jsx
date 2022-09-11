@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigate, useParams } from "react-router-dom"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Button from './Button';
 
 import './css/TaskDetails.css'
 
-const TaskDetails = ({ handleDescAddition, descript }) => {
+const TaskDetails = ({ handleDescAddition, TaskDescription }) => {
     const params = useParams();
     const history = useNavigate();
     const [inputDesc, setInputDesc] = useState('');
@@ -16,8 +16,14 @@ const TaskDetails = ({ handleDescAddition, descript }) => {
 
     const handleInputChange = (e) => {
         setInputDesc(e.target.value);
-        handleDescAddition(inputDesc, params.taskTitle);
+
     };
+
+    useEffect(() => {
+        return () => {
+            handleDescAddition(inputDesc, params.taskTitle);
+        };
+    }, [inputDesc]);
 
     return (
         <>
@@ -31,9 +37,9 @@ const TaskDetails = ({ handleDescAddition, descript }) => {
                 <textarea
                     type="text"
                     placeholder="Detalhes.."
-                    value={descript}
                     className='task-input-detail'
                     onChange={handleInputChange}
+                    defaultValue={TaskDescription}
                 />
             </div>
         </>

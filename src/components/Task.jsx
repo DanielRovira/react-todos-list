@@ -8,8 +8,8 @@ const Task = ({ task, handleTaskClick, handleTaskDeletion, handleDescription }) 
     const history = useNavigate();
 
     const handleTaskDetailsClick = () => {
-        handleDescription(task.description);
-        history(`/${task.title}`)
+            handleDescription(task.description);
+            history(`/${task.title}`);
     }
 
     return (

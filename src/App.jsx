@@ -9,8 +9,6 @@ import TaskDetails from './components/TaskDetails';
 
 import './components/css/App.css'
 
-
-
 const App = () => {
         const [tasks, setTasks] = useState([
             {
@@ -68,17 +66,18 @@ const App = () => {
 
         const handleDescAddition = (taskDesc, taskTitle) => {
             const newTask = tasks.map(task => {
-                if (task.title === taskTitle) return { ...task, description: taskDesc };
-
+                if (task.title === taskTitle && taskDesc !== "") return { ...task, description: taskDesc };
                 return task;
             })
-        setTasks(newTask)
+
+            setTasks(newTask);
         };
 
-        const [descript, setDescription] = useState();
-        const handleDescription = (desc) => {
-            return setDescription(desc)
-        }
+        const [TaskDescription, setTaskDescription] = useState();
+        
+        const handleDescription = (taskDesc) => {
+            return setTaskDescription(taskDesc)
+        };
 
         const Main = () => {
             return (
@@ -92,7 +91,7 @@ const App = () => {
                     /> 
                 </>
             )
-        }
+        };
 
         return (
             <Router>
@@ -100,11 +99,11 @@ const App = () => {
                     <Header/>
                     <Routes>
                         <Route path="/" element={<Main/>} />
-                        <Route path="/:taskTitle" element={<TaskDetails handleDescAddition={handleDescAddition} descript={descript}/>} />
+                        <Route path="/:taskTitle" element={<TaskDetails handleDescAddition={handleDescAddition} TaskDescription={TaskDescription}/>} />
                     </Routes>
                 </div>
             </Router>    
         )
-}
+};
 
 export default App;
