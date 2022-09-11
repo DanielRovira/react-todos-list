@@ -9,7 +9,7 @@ const AddTask = ({ handleTaskAddition }) => {
 
     const handleInputChange = (e) => {
         setInputData(e.target.value);
-        // console.log(e.target.value)  // Mostra o valor que foi digitado
+        // console.log(e.target.value)  // Mostra o valor digitado
     };
 
     const handleAddTaskClick = () => {
@@ -21,21 +21,18 @@ const AddTask = ({ handleTaskAddition }) => {
         <div className='add-task-container'>
             <input 
                 autoFocus 
+                placeholder="Adicionar tarefa.." 
                 onChange={handleInputChange} 
-                value={inputData}  //Precisa disso?
+                value={inputData} 
                 className='add-task-input' 
                 type="text" 
-                onKeyDown={event => {
-                    if (event.key === "Enter") {
-                        handleTaskAddition(inputData);
-                    }
-                }}
+                onKeyDown={event => { if (event.key === "Enter") {handleTaskAddition(inputData)}}}
             />
             <div className="add-task-button-container">
-              <Button onClick={handleAddTaskClick}>Adicionar</Button>
+                <Button onClick={handleAddTaskClick}>Adicionar</Button>
              </div>
         </div>
-      );
+    );
 }
  
 export default AddTask;
