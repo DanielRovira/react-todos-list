@@ -99,7 +99,7 @@ const App = () => {
                     <Header/>
                     <Routes>
                         <Route path="/" element={<Main/>} />
-                        <Route path="/projeto-react" element={<Main/>} />
+                        <Route path="/react-todos-list" element={<Main/>} />
                         <Route path="/:taskTitle" element={<TaskDetails handleDescAddition={handleDescAddition} TaskDescription={TaskDescription}/>} />
                     </Routes>
                 </div>
