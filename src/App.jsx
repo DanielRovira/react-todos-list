@@ -11,29 +11,29 @@ import './components/css/App.css'
 
 const App = () => {
         const [tasks, setTasks] = useState([
-            // {
-            //     id: '1',
-            //     title: 'Estudar programação',
-            //     completed: false,
-            // },
-            // {
-            //     id: '2',
-            //     title: 'Ler Livros',
-            //     completed: true,
-            // },
+            {
+                id: '1',
+                title: 'Estudar programação',
+                completed: false,
+            },
+            {
+                id: '2',
+                title: 'Ler Livros',
+                completed: true,
+            },
         ]);
 
-        useEffect(() => {
-            const fetchTasks = async () => {
-                 const response  = await fetch(
-                     "https://jsonplaceholder.typicode.com/todos?_limit=4"
-                 );
-                 const responseJson = await response.json();
-                 setTasks(responseJson);
-            };
+        // useEffect(() => {
+        //     const fetchTasks = async () => {
+        //          const response  = await fetch(
+        //              "https://jsonplaceholder.typicode.com/todos?_limit=4"
+        //          );
+        //          const responseJson = await response.json();
+        //          setTasks(responseJson);
+        //     };
 
-            fetchTasks();
-        }, []);
+        //     fetchTasks();
+        // }, []);
 
         const handleTaskClick = (taskId) => {
             const newTask = tasks.map(task => {

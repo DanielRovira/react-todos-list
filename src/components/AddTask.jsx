@@ -20,10 +20,16 @@ const AddTask = ({ handleTaskAddition }) => {
     return (
         <div className='add-task-container'>
             <input 
+                autoFocus 
                 onChange={handleInputChange} 
                 value={inputData}  //Precisa disso?
                 className='add-task-input' 
                 type="text" 
+                onKeyDown={event => {
+                    if (event.key === "Enter") {
+                        handleTaskAddition(inputData);
+                    }
+                }}
             />
             <div className="add-task-button-container">
               <Button onClick={handleAddTaskClick}>Adicionar</Button>

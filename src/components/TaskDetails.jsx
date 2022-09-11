@@ -35,6 +35,7 @@ const TaskDetails = ({ handleDescAddition, TaskDescription }) => {
             </div>
             <div>
                 <textarea
+                    autoFocus 
                     type="text"
                     placeholder="Detalhes.."
                     className='task-input-detail'
