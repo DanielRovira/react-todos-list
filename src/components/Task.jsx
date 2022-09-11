@@ -4,13 +4,10 @@ import { useNavigate } from 'react-router-dom'
 
 import "./css/Task.css"
 
-const Task = ({ task, handleTaskClick, handleTaskDeletion, handleDescription }) => {
+const Task = ({ task, handleTaskClick, handleTaskDeletion }) => {
     const history = useNavigate();
 
-    const handleTaskDetailsClick = () => {
-            handleDescription(task.description);
-            history(`/${task.title}`);
-    }
+    const handleTaskDetailsClick = () => {history(`/${task.title}`)}
 
     return (
         <div 
@@ -37,7 +34,6 @@ const Task = ({ task, handleTaskClick, handleTaskDeletion, handleDescription }) 
             </div>
         </div>
     );
-    // return <div className="task-container">{task.title}</div>;
 };
 
 export default Task;

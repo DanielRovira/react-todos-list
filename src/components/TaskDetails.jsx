@@ -1,29 +1,27 @@
 import React from 'react';
 import { useNavigate, useParams } from "react-router-dom"
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import Button from './Button';
 
 import './css/TaskDetails.css'
 
-const TaskDetails = ({ handleDescAddition, TaskDescription }) => {
+const TaskDetails = ({ handleDescAddition }) => {
     const params = useParams();
     const history = useNavigate();
-    const [inputDesc, setInputDesc] = useState('');
 
     const handleBackButtonClick = () => {
         history(-1);
     };
 
     const handleInputChange = (e) => {
-        setInputDesc(e.target.value);
-
+        window.description = e.target.value;
     };
 
     useEffect(() => {
         return () => {
-            handleDescAddition(inputDesc, params.taskTitle);
+            handleDescAddition(window.description, params.taskTitle);
         };
-    }, [inputDesc]);
+    }, [window.description]);
 
     return (
         <>
@@ -39,8 +37,10 @@ const TaskDetails = ({ handleDescAddition, TaskDescription }) => {
                     type="text"
                     placeholder="Detalhes.."
                     className='task-input-detail'
+                    id='task-input-detail'
                     onChange={handleInputChange}
-                    defaultValue={TaskDescription}
+                    defaultValue={window.description}
+                    onFocus={(e)=>e.currentTarget.setSelectionRange(e.currentTarget.value.length, e.currentTarget.value.length)}
                 />
             </div>
         </>

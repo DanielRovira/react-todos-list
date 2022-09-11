@@ -4,6 +4,8 @@ import App from './App';
 
 import './components/css/index.css';
 
+window.description = "";
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

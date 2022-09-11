@@ -58,17 +58,11 @@ const App = () => {
 
         const handleDescAddition = (taskDesc, taskTitle) => {
             const newTask = tasks.map(task => {
-                if (task.title === taskTitle && taskDesc !== "") return { ...task, description: taskDesc };
+                if (task.title === taskTitle) return { ...task, description: taskDesc };
                 return task;
             })
 
             setTasks(newTask);
-        };
-
-        const [TaskDescription, setTaskDescription] = useState();
-        
-        const handleDescription = (taskDesc) => {
-            return setTaskDescription(taskDesc)
         };
 
         const Main = () => {
@@ -79,7 +73,6 @@ const App = () => {
                         tasks={tasks} 
                         handleTaskClick={handleTaskClick} 
                         handleTaskDeletion={handleTaskDeletion}
-                        handleDescription={handleDescription}
                     /> 
                 </>
             )
@@ -92,7 +85,7 @@ const App = () => {
                     <Routes>
                         <Route path="/" element={<Main/>} />
                         <Route path="/react-todos-list" element={<Main/>} />
-                        <Route path="/:taskTitle" element={<TaskDetails handleDescAddition={handleDescAddition} TaskDescription={TaskDescription}/>} />
+                        <Route path="/:taskTitle" element={<TaskDetails handleDescAddition={handleDescAddition}/>} />
                     </Routes>
                 </div>
             </Router>    
