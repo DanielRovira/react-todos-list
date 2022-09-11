@@ -11,16 +11,16 @@ import './components/css/App.css'
 
 const App = () => {
         const [tasks, setTasks] = useState([
-            {
-                id: '1',
-                title: 'Estudar programação',
-                completed: false,
-            },
-            {
-                id: '2',
-                title: 'Ler Livros',
-                completed: true,
-            },
+            // {
+            //     id: '1',
+            //     title: 'Estudar programação',
+            //     completed: false,
+            // },
+            // {
+            //     id: '2',
+            //     title: 'Ler Livros',
+            //     completed: true,
+            // },
         ]);
 
         useEffect(() => {
