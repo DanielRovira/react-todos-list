@@ -1,5 +1,16 @@
-iniciar >> npm start
+iniciar >> 
 
-importar >> imp tab
+$ yarn start
 
-criar componente >> sfc tab
+importar >>
+
+$ imp tab 
+
+criar componente >>
+
+$ sfc tab
+
+Publicar no GitHub Pages
+
+$ npm run deploy
+
