@@ -30,11 +30,11 @@ const AddTask = ({ handleTaskAddition }) => {
                 size="small"
                 variant="outlined" id="outlined-basic" label="Adicionar tarefa.." 
                 type="text" 
-                onKeyDown={event => { if (event.key === "Enter") {handleTaskAddition(inputData)}}}
+                onKeyDown={event => { if (event.key === "Enter") {handleAddTaskClick()}}}
             />
             <div className="add-task-button-container">
                 <Button variant="contained" className='add-button' onClick={handleAddTaskClick}>Adicionar</Button>
-             </div>
+            </div>
         </div>
     );
 }

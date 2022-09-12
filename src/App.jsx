@@ -61,7 +61,7 @@ const App = () => {
                 if (task.title === taskTitle) return { ...task, description: taskDesc };
                 return task;
             })
-
+            
             setTasks(newTask);
         };
 
@@ -85,7 +85,7 @@ const App = () => {
                     <Routes>
                         <Route path="/" element={<Main/>} />
                         <Route path="/react-todos-list" element={<Main/>} />
-                        <Route path="/:taskTitle" element={<TaskDetails handleDescAddition={handleDescAddition}/>} />
+                        <Route path="/:taskTitle" element={<TaskDetails handleDescAddition={handleDescAddition} />} />
                     </Routes>
                 </div>
             </Router>    

@@ -7,7 +7,10 @@ import "./css/Task.css"
 const Task = ({ task, handleTaskClick, handleTaskDeletion }) => {
     const history = useNavigate();
 
-    const handleTaskDetailsClick = () => {history(`/${task.title}`)}
+    const handleTaskDetailsClick = () => {
+        window.description = task.description;
+        history(`/${task.title}`);
+    }
 
     return (
         <div 
