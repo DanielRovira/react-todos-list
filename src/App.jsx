@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import {v4 as uuidv4} from 'uuid'
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 
+import data from './data.json'
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 import AddTask from './components/AddTask';
 import TaskDetails from './components/TaskDetails';
-import data from './data.json'
 
 import './components/css/App.css'
 
