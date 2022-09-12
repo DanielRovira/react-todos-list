@@ -1,5 +1,6 @@
 import React from 'react';
-import { CgClose, CgInfo } from 'react-icons/cg'
+import { CgInfo } from 'react-icons/cg'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { useNavigate } from 'react-router-dom'
 
 import "./css/Task.css"
@@ -23,16 +24,16 @@ const Task = ({ task, handleTaskClick, handleTaskDeletion }) => {
             
             <div className='buttons-container'>
                 <button 
-                    className='remove-task-button' 
-                    onClick={() => handleTaskDeletion(task.id)}
-                    >
-                    <CgClose/>
-                </button>
-                <button 
                     className='see-task-detail-button' 
                     onClick={handleTaskDetailsClick}
                     >
                     <CgInfo/>
+                </button>
+                <button 
+                    className='remove-task-button' 
+                    onClick={() => handleTaskDeletion(task.id)}
+                    >
+                    <DeleteForeverIcon/>
                 </button>
             </div>
         </div>
