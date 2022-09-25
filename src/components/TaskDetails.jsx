@@ -27,7 +27,7 @@ const TaskDetails = ({ handleDescAddition }) => {
     return (
         <>
             <div className='back-button-container'>
-                <Button variant='contained' className='back-button' onClick={handleBackButtonClick}>Voltar</Button>
+                <Button variant='contained' className='back-button' onClick={handleBackButtonClick} style={{ textTransform: 'none' }}>Back</Button>
             </div>
             <div className="task-details-container">
                 <h2>{params.taskTitle}</h2>
@@ -36,7 +36,7 @@ const TaskDetails = ({ handleDescAddition }) => {
                 <textarea
                     autoFocus 
                     type="text"
-                    placeholder="Detalhes.."
+                    placeholder="Details.."
                     className='task-input-detail'
                     id='task-input-detail'
                     onChange={handleInputChange}

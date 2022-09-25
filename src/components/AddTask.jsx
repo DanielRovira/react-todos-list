@@ -23,17 +23,17 @@ const AddTask = ({ handleTaskAddition }) => {
         <div className='add-task-container'>
             <TextField 
                 autoFocus 
-                // placeholder="Adicionar tarefa.." 
+                // placeholder="Add task.." 
                 onChange={handleInputChange} 
                 value={inputData} 
                 className='add-task-input' 
                 size="small"
-                variant="outlined" id="outlined-basic" label="Adicionar tarefa.." 
+                variant="outlined" id="outlined-basic" label="Add task.." 
                 type="text" 
                 onKeyDown={event => { if (event.key === "Enter") {handleAddTaskClick()}}}
             />
             <div className="add-task-button-container">
-                <Button variant="contained" className='add-button' onClick={handleAddTaskClick}>Adicionar</Button>
+                <Button variant="contained" className='add-button' onClick={handleAddTaskClick} style={{ textTransform: 'none' }}>Add</Button>
             </div>
         </div>
     );

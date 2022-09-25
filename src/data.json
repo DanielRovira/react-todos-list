@@ -1,27 +1,27 @@
 [
     {
         "id": 1,
-        "title": "Estudar programação",
+        "title": "Study programming",
         "completed": false
     },
     {
         "id": 2,
-        "title": "Ler Livros",
+        "title": "Read books",
         "completed": true
     },
     {
         "id": 3,
-        "title": "Terminar projeto React",
+        "title": "Finish React.js project",
         "completed": true
     },
     {
         "id": 4,
-        "title": "Fazer compras",
+        "title": "Go shopping",
         "completed": false
     },
     {
         "id": 5,
-        "title": "Pagar contas",
+        "title": "Pay the bills",
         "completed": true
     }
 ]
