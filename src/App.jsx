@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {v4 as uuidv4} from 'uuid'
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 
-import data from './data.json'
+import externalData from './data.json'
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 import AddTask from './components/AddTask';
@@ -11,7 +11,8 @@ import TaskDetails from './components/TaskDetails';
 import './components/css/App.css'
 
 const App = () => {
-        const [tasks, setTasks] = useState(data);
+    const data = localStorage.getItem("tasks");
+        const [tasks, setTasks] = useState(data ? JSON.parse(data) : externalData);
 
         //Import from API
         // useEffect(() => {
@@ -34,11 +35,12 @@ const App = () => {
                 return task;
             });
 
-            setTasks(newTask)
+            setTasks(newTask);
+            localStorage.setItem("tasks", JSON.stringify(newTask));
         };
 
         const handleTaskAddition = (taskTitle) => {
-            const newTasks = [
+            const newTask = [
                 ...tasks, 
                 {
                     title: taskTitle,
@@ -47,13 +49,15 @@ const App = () => {
                 },
             ];
 
-            setTasks(newTasks);
+            setTasks(newTask);
+            localStorage.setItem("tasks", JSON.stringify(newTask));
         };
 
         const handleTaskDeletion = (taskId) => {
-            const newTasks = tasks.filter(task => task.id !== taskId)
+            const newTask = tasks.filter(task => task.id !== taskId)
 
-            setTasks(newTasks)
+            setTasks(newTask);
+            localStorage.setItem("tasks", JSON.stringify(newTask));
         };
 
         const handleDescAddition = (taskDesc, taskTitle) => {
@@ -63,6 +67,7 @@ const App = () => {
             })
             
             setTasks(newTask);
+            localStorage.setItem("tasks", JSON.stringify(newTask));
         };
 
         const Main = () => {
